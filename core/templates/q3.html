@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<br>
+<h5 class="center">Now</h5>
+<div class="row">
+  <div class="row center">
+    <div class="col s12 m3"></div>
+    <div class="col s12 m6">
+      <div class="card-panel grey lighten-4">
+        <div class="row">
+          <i class="material-icons red-text">arrow_upward</i>
+          <a class="black-text"> Max: {{ max }}</a>
+        </div>
+        <div class="row">
+          <i class="material-icons blue-text">arrow_downward</i>
+          <a class="black-text v-align wraper"> Min: {{ min }}</a>
+        </div>
+        <div class="row">
+          <i class="material-icons grey-text">filter_drama</i>
+          <a class="black-text"> Rain probability: {{ rain_probability }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3"></div>
+  </div>
+  <h5 class="center">Last results</h5>
+  <table class="highlight centered">
+    <thead>
+      <tr>
+        <th>Max</th>
+        <th>Min</th>
+        <th>Rain Probability</th>
+        <th>Date and Time</th>
+      </tr>
+    </thead>
+      {% for wf in forecasts %}
+      <tr>
+        <td>{{ wf.max }}</td>
+        <td>{{ wf.min }}</td>
+        <td>{{ wf.rain_probability }}</td>
+        <td>{{ wf.created_at }}</td>
+      </tr>
+      {% endfor %}
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

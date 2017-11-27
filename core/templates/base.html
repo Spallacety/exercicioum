@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<html lang="pt-br">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title>Exercise</title>
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+        <a href="{% url 'index' %}" class="brand-logo center">Exercise</a>
+      </div>
+    </nav>
+
+    {% block dialog %}
+    {% endblock %}
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer class="page-footer grey darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h5 class="white-text">Exercise</h5>
+            <p class="grey-text text-lighten-4">First questions of TESI.</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Copyright© 2017, Lucas R. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-mask.js' %}"></script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    {% block javascript %}{% endblock %}
+
+  </body>
+
+</html>

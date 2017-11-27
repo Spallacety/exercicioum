@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<br>
+<div class="row center">
+  <a href="{% static 'brazil_worldcup.csv' %}" class="waves-effect waves-light img-btn btn grey darken-4 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Download as CSV"><i class="material-icons">file_download</i></a>
+</div>
+<h5 class="center">Total value: {{ total }}</h5>
+<div class="row">
+  <table class="highlight centered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in cities %}
+      <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.value }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

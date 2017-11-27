@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row center">
+  <br>
+  <a href="{% url 'q1' %}" class="waves-effect waves-light btn grey darken-4">First</a>
+  <br><br>
+  <a href="{% url 'q2' %}" class="waves-effect waves-light btn grey darken-4">Second</a>
+  <br><br>
+  <a href="{% url 'q3' %}" class="waves-effect waves-light btn grey darken-4">Third</a>
+  <br><br>
+  <a href="{% url 'q4' %}" class="waves-effect waves-light btn grey darken-4">Fourth</a>
+  <br><br>
+  <a href="{% url 'q5_6' %}" class="waves-effect waves-light btn grey darken-4">Fifth and Sixth</a>
+  <br>
+</div>
+
+{% endblock %}

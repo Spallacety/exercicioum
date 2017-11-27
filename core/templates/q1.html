@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<br>
+<div class="row">
+  <table class="highlight centered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in movie_list %}
+      <tr>
+        <td>{{ m.title }}</td>
+        <td>{{ m.score }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
